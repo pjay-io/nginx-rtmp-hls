@@ -18,3 +18,5 @@ spec:
         ports:
         - containerPort: 80
         - containerPort: 1935
+      imagePullSecrets:
+      - name: github-packages

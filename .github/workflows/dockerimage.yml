@@ -12,7 +12,6 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build the Docker image
       run: |
-        docker login docker.pkg.github.com -u PJay- -p ${{ secrets.GITHUB_TOKEN }}
-        docker build -t pieplien .
-        docker tag pieplien docker.pkg.github.com/pjay-/nginx-rtmp-hls/docker-nginx-rtmp-hls
-        docker push docker.pkg.github.com/pjay-/nginx-rtmp-hls/docker-nginx-rtmp-hls
+        docker login docker.pkg.github.com -u teslayana -p ${{ secrets.GITHUB_TOKEN }}
+        docker build -t docker.pkg.github.com/teslayana/nginx-rtmp-hls/docker-nginx-rtmp-hls .
+        docker push docker.pkg.github.com/teslayana/nginx-rtmp-hls/docker-nginx-rtmp-hls

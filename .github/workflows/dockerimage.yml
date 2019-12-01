@@ -14,4 +14,5 @@ jobs:
       run: |
         docker login docker.pkg.github.com -u PJay- -p ${{ secrets.GITHUB_TOKEN }}
         docker build -t docker-nginx-rtmp-hls .
+        docker tag docker-nginx-rtmp-hls docker.pkg.github.com/pjay-/nginx-rtmp-hls/docker-nginx-rtmp-hls
         docker push docker.pkg.github.com/pjay-/nginx-rtmp-hls/docker-nginx-rtmp-hls        

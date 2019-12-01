@@ -1,0 +1,18 @@
+name: Docker Image CI
+
+on: [push]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the Docker image
+      run: |
+        docker login docker.pkg.github.com -u PJay- -p ${{ secrets.GITHUB_TOKEN }}
+        docker build . --file Dockerfile --tag PJay-/nginx-rtmp-hls
+        docker push PJay-/nginx-rtmp-hls
+        

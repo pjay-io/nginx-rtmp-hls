@@ -13,6 +13,6 @@ jobs:
     - name: Build the Docker image
       run: |
         docker login docker.pkg.github.com -u PJay- -p ${{ secrets.GITHUB_TOKEN }}
-        docker build . --file Dockerfile -t docker.pkg.github.com/pjay-/nginx-rtmp-hls/docker-nginx-rtmp-hls:latest
+        docker build -t docker.pkg.github.com/pjay-/nginx-rtmp-hls/docker-nginx-rtmp-hls:latest
         docker push docker.pkg.github.com/pjay-/nginx-rtmp-hls/docker-nginx-rtmp-hls:latest
         
